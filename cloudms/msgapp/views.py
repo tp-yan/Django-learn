@@ -1,7 +1,12 @@
 from django.shortcuts import render
 from datetime import datetime
 
-# Create your views here.
+# 处理函数的返回，即响应结果是一个类实例
+# Django响应类型：HttpResponse(200)及其子类，JsonResponse，StreamingHttpResponse，FileResponse类
+# HttpResponse子类：HttpResponseRedirect(302)，HttpResponsePermanentRedirect(301)，HttpResonseNotModified(304)
+# HttpResponseBadRequest(400),HttpResponseForbidden(403),HttpResponseNotAllowed(405)
+# HttpResponseGone(410),HttpResponseServer(500),HttpResponseNotFound(404)
+# MIME:标识响应结果的类型，如文本、图片、视频等
 def msgproc(request):
 	datelist = []
 	if request.method == 'POST':

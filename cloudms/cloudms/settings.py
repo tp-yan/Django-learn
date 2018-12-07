@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'cloudms.urls'
+ROOT_URLCONF = 'cloudms.urls'   # 指定全局路由文件名称
 
 TEMPLATES = [
     {

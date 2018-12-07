@@ -17,6 +17,10 @@ from django.contrib import admin
 from django.urls import path,include
 
 urlpatterns = [
-	path('msggate/',include('msgapp.urls')),
-    path('admin/', admin.site.urls),
+	path('msggate/',include('msgapp.urls')),	# URL逐一匹配，不考虑HTTP请求方式，只根据URL进行路由
+    path('admin/', admin.site.urls),	# path(route--string,view)处理字符串路由，repath(route--regx,view)处理正则表达式路由
+    # route的三种表现形式：
+    # 1.精确字符串： articles/2003
+    # 2.Django的转换格式（一个URL模板）匹配URL同时获得URL路径信息：<类型:变量名> 类型：str（默认），int,slug,uuid,path. 目的：提取URL路径上的参数，可将参数传递给后面的处理函数
+    # 3.正则表达式： articles/(?P<year>[0-9]{4})/  : 正则表达式也可以提取URL参数但只能是str类型
 ]
